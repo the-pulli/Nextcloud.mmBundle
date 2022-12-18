@@ -5,7 +5,7 @@ To upload files to Nextcloud you have to generate an app password.
 
 # Usage
 
-It consists two commands, `Upload Attachments`, `Configure Settings` and `Test Interpreter`. The first one uploads the attachments to Nextcloud.
+It consists three commands: `Upload Attachments`, `Configure Settings` and `Test Interpreter`. The first one uploads the attachments to Nextcloud.
 The second one opens a Python file containing all the configurable settings. And the last one checks the defined Python Interpreter and installs the dependencies.
 To automate adding attachments from MailMate to Nextcloud you can add a MailMate rule for your inbox to execute the Plugins `Upload Attachments` command.
 
