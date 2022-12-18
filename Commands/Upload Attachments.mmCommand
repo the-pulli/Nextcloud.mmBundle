@@ -1,0 +1,18 @@
+{	name = "Upload Attachments";
+	uuid = "02115466-3FC3-457F-B48F-216F1EF00D97";
+	environment = 'MM_MESSAGE_ID=${message-id.split}\n';
+	inputFilesPattern = "";
+	executionMode = "singleMessage";
+	keyEquivalent = "~@U";
+	script = '#!/usr/bin/env bash
+
+set -e
+
+DIR="${MM_BUNDLE_SUPPORT}/bin/venv"
+if [ ! -d "$DIR" ]; then
+    `"${MM_BUNDLE_SUPPORT}/bin/test_python_interpreter"`
+    source "${MM_BUNDLE_SUPPORT}/bin/venv/bin/activate" && python3 "${MM_BUNDLE_SUPPORT}/bin/open_settings.py" && deactivate
+fi
+source "${MM_BUNDLE_SUPPORT}/bin/venv/bin/activate" && python3 "${MM_BUNDLE_SUPPORT}/bin/prepare_attachments.py" && deactivate
+';
+}

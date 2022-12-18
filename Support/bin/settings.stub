@@ -1,0 +1,16 @@
+SETTINGS = {
+  # URL to your Nextcloud installation
+  "url": "",
+  # Your username
+  "username": "",
+  # Use an app specific password
+  "password": "",
+  # Base folder for uploading the attachments
+  "base_folder": "Mail Attachments",
+  # Ask for a password for the sharing URL (True or False)
+  "sharing_password": True,
+  # Array of Subdomains to pick from for the link generation. Leave empty, if you haven't any
+  "subdomains": [],
+  # Default Python installation for venv, defaults to homebrew installation
+  "python": "/opt/homebrew/bin/python3"
+}

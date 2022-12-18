@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+from helpers import configure_venv
+import os
+import settings as s
+
+python_interpreter = os.popen("'{}' -V".format(s.SETTINGS["python"])).read().strip()
+
+if python_interpreter.startswith("Python 3."):
+    message = "Correct Python version installed. Have fun!"
+    title = "Success"
+    icon = ""
+    configure_venv.check_env()
+else:
+    message = "Install Python 3 via homebrew to use this bundle."
+    title = "Error"
+    icon = "with icon caution "
+
+apple_script = """
+    use AppleScript version "2.4" -- Yosemite (10.10) or later
+    use scripting additions
+
+    display dialog "%s" %swith title "%s" buttons { "OK" } default button { "OK" }
+    """ % (message, icon, title)
+os.system("osascript -e '{}'".format(apple_script))

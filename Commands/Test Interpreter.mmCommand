@@ -1,0 +1,10 @@
+{	name = "Check Python Installation and install venv";
+	uuid = "16A578BB-8FB9-49D4-A698-99C558446FE6";
+	input = "none";
+	executionMode = "noMessages";
+	script = '#!/usr/bin/env bash
+
+set -e
+
+"${MM_BUNDLE_SUPPORT}/bin/test_python_interpreter"';
+}

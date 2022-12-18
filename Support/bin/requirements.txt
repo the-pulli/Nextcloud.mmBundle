@@ -1,0 +1,1 @@
+nextcloud_api_wrapper >= 0.2.1.5
